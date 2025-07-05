@@ -5,7 +5,7 @@ import styles from '../styles/MovieList.module.css';
 interface MovieCardProps {
   title: string;
   poster: string;
-  overview: string;
+  overview?: string;
 }
 
 export default function MovieCard({ title, poster, overview }: MovieCardProps) {
@@ -16,7 +16,7 @@ export default function MovieCard({ title, poster, overview }: MovieCardProps) {
       <div className={styles.overlay}>
         <div className="p-2">
           <h6 className="mb-1">{title}</h6>
-          <p className="small mb-0">{overview}</p>
+          {overview && <p className="small mb-0">{overview}</p>}
         </div>
       </div>
     </div>
